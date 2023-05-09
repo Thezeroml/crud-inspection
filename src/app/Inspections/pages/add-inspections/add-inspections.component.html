@@ -1,0 +1,74 @@
+<div [ngStyle]="{ display: larguraJanela < 630 ? 'none' : 'block' }" class="form-costum">
+    <div>
+        <form [formGroup]="liveForm">
+            <mat-card  class="example-form">
+                <mat-card-content >
+            <mat-form-field class="full-width">
+                <mat-label>Company Id</mat-label>
+                <input matInput formControlName="companyId" name="companyId">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Broker Code</mat-label>
+                <input matInput formControlName="brokerCode" name="brokerCode">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Product Code</mat-label>
+                <input matInput formControlName="productCode" name="productCode">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Product Name</mat-label>
+                <input matInput formControlName="productName" name="productName">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Inspection Number</mat-label>
+                <input matInput formControlName="inspectionNumber" name="inspectionNumber">
+            </mat-form-field>
+            <div class="report-costum">
+                <mat-form-field class="report-costum-width">
+                    <mat-label>Status</mat-label>
+                    <input matInput formControlName="status" name="status">
+                </mat-form-field>
+                <mat-form-field class="report-costum-width">
+                    <mat-label>Observation</mat-label>
+                    <input matInput formControlName="observation" name="observation">
+                </mat-form-field>
+
+                <button mat-mini-fab color="primary" (click)="addReport()">
+                    <mat-icon>plus_one</mat-icon>
+                </button>
+
+                <div *ngFor="let item of reports; " class="report-costum">
+                    <mat-form-field class="report-costum-width">
+                        <mat-label>Status</mat-label>
+                        <input matInput formControlName="status" name="status" [(ngModel)]="item.status"
+                        name="{{item.status}}">
+                    </mat-form-field>
+                    <mat-form-field class="report-costum-width">
+                        <mat-label>Observation</mat-label>
+                        <input matInput formControlName="observation" name="observation" [(ngModel)]="item.observation">
+                    </mat-form-field>
+                    <button mat-mini-fab color="primary" (click)="removeReport(item)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+           <div *ngIf="isEdit == false; else editButton" class="button-costum">
+            <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+           </div>
+           <ng-template #editButton>
+            <div class="button-costum">
+                <button mat-raised-button color="primary" (click)="onSubmit()">Editar</button>
+            </div>
+        </ng-template>
+        </mat-card-content>
+    </mat-card>
+        </form>
+
+    </div>
+</div>
+
+<div [ngStyle]="{ display: larguraJanela < 630 ? 'block' : 'none' }" >
+    <div class="largura-nao-suportada">
+     <h1>Largura não suportada.</h1>
+    </div>
+ </div>

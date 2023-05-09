@@ -1,0 +1,23 @@
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+main {
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.mat-card-content-custom {
+    height: 40vh;
+    padding: 18px;
+}
+
+.largura-nao-suportada {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aquamarine;
+}

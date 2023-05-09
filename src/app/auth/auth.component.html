@@ -1,0 +1,31 @@
+<main [ngStyle]="{ display: larguraJanela < 630 ? 'none' : 'block' }">
+    <div>
+        <mat-grid-list cols="1" rowHeight="2:1">
+            <mat-grid-tile>
+                <mat-card class="mat-card-content-custom">
+                    <mat-card-content>
+                        <mat-form-field>
+                            <mat-label>Nome</mat-label>
+                            <input matInput [formControl]="nome" required/>
+                            <mat-error *ngIf="nome.hasError('required')">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Senha:</mat-label>
+                            <input type="password" matInput [formControl]="senha" required/>
+                            <mat-error *ngIf="senha.hasError('required')">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                        <div>
+                            <button mat-raised-button (click)="login()">Entrar</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </div>
+</main>
+
+<div [ngStyle]="{ display: larguraJanela < 630 ? 'block' : 'none' }" >
+   <div class="largura-nao-suportada">
+    <h1>Largura não suportada.</h1>
+   </div>
+</div>

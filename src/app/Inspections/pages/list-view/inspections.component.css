@@ -1,0 +1,25 @@
+.inspection-component-style {
+    padding: 18px;
+}
+
+.inspection-header-style {
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+
+  .largura-nao-suportada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aquamarine;
+}
